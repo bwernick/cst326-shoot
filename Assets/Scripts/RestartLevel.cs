@@ -12,6 +12,10 @@ public class RestartLevel : MonoBehaviour
         {
             GameOver.isPlayerDead = false;
             Time.timeScale = 1;
+            //reset score just in case
+            PlayerScore.playerScore = 0;
+            //not working for some reason
+            PlayerPrefs.SetInt("High Score", PlayerScore.highScore);
             SceneManager.LoadScene("SampleScene");
         }
     }

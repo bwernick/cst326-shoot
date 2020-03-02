@@ -24,6 +24,7 @@ public class GameOver : MonoBehaviour
             Time.timeScale = 0;
             //display game over text
             gameOver.enabled = true;
+            PlayerScore.playerScore = 0;
         }
     }
 }

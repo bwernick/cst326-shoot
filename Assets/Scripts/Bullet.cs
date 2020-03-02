@@ -33,8 +33,8 @@ public class Bullet : MonoBehaviour
             Destroy(other.gameObject);
             //destroy bullet
             Destroy(gameObject);
-            PlayerScore.playerScore += 10; 
-
+            PlayerScore.playerScore += 10;
+            Debug.Log("Enemy_1 killed");
         }
 
         if (other.gameObject.tag == "Enemy_2")
