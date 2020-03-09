@@ -39,6 +39,8 @@ public class Enemy : MonoBehaviour
             if(Random.value > fireRate)
             {
                 Instantiate(shot, enemy.position, enemy.rotation);
+                Animator temp_anim = enemy.GetComponent<Animator>();
+                temp_anim.SetTrigger("shoot");
             }
 
             //game over condition when enemies reach bases

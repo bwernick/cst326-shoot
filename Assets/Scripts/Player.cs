@@ -13,12 +13,12 @@ public class Player : MonoBehaviour
     public float fireRate;
     private float nextFire;
 
-    Animator player_animator;
+    Animator anim;
 
     void Start()
     {
         player = GetComponent<Transform>();
-        player_animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -46,9 +46,8 @@ public class Player : MonoBehaviour
             nextFire = Time.time + fireRate;
             Instantiate(bullet, shottingOffset.position, shottingOffset.rotation);
             Debug.Log("Bang!");
-            player_animator.SetBool("player_shoot", true);
+            anim.SetTrigger("shoot");
         }
 
-        player_animator.SetBool("player_shoot", false);
     }
 }

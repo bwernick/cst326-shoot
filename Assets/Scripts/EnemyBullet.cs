@@ -28,10 +28,12 @@ public class EnemyBullet : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Destroy(other.gameObject);
+            Animator anim = other.gameObject.GetComponent<Animator>();
+            anim.SetTrigger("death");
+            Destroy(other.gameObject, anim.GetCurrentAnimatorStateInfo(0).length + 0.2f);
             Destroy(gameObject);
             GameOver.isPlayerDead = true;
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
         }
         else if(other.tag == "Base")
         {

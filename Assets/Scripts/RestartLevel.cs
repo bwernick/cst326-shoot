@@ -16,7 +16,7 @@ public class RestartLevel : MonoBehaviour
             PlayerScore.playerScore = 0;
             //not working for some reason
             PlayerPrefs.SetInt("High Score", PlayerScore.highScore);
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Game");
         }
     }
 }

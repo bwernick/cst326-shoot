@@ -29,8 +29,10 @@ public class Bullet : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemy_1")
         {
+            Animator anim = other.gameObject.GetComponent<Animator>();
+            anim.SetTrigger("death");
             //kill enemy
-            Destroy(other.gameObject);
+            Destroy(other.gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
             //destroy bullet
             Destroy(gameObject);
             PlayerScore.playerScore += 10;
@@ -39,8 +41,10 @@ public class Bullet : MonoBehaviour
 
         if (other.gameObject.tag == "Enemy_2")
         {
+            Animator anim = other.gameObject.GetComponent<Animator>();
+            anim.SetTrigger("death");
             //kill enemy
-            Destroy(other.gameObject);
+            Destroy(other.gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
             //destroy bullet
             Destroy(gameObject);
             PlayerScore.playerScore += 20;
@@ -49,8 +53,10 @@ public class Bullet : MonoBehaviour
 
         if (other.gameObject.tag == "Enemy_3")
         {
+            Animator anim = other.gameObject.GetComponent<Animator>();
+            anim.SetTrigger("death");
             //kill enemy
-            Destroy(other.gameObject);
+            Destroy(other.gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
             //destroy bullet
             Destroy(gameObject);
             PlayerScore.playerScore += 30;
@@ -59,8 +65,10 @@ public class Bullet : MonoBehaviour
 
         if (other.gameObject.tag == "Enemy_4")
         {
+            Animator anim = other.gameObject.GetComponent<Animator>();
+            anim.SetTrigger("death");
             //kill enemy
-            Destroy(other.gameObject);
+            Destroy(other.gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
             //destroy bullet
             Destroy(gameObject);
             PlayerScore.playerScore += 40;
